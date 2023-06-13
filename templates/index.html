@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Handwritten Number Recognition</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="static/styles.css">
+        <style>
+            body {
+                background-image: url("static/image.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="margin-left: 40px; text-align:center;">Handwritten Number Recognition</h1>
+        <h2 style="margin-top: 100px; text-align:center;">Upload a picture of a handwritten number</h2>
+        <form style="margin-left: 60px; color: #fffefe;" id="upload-form" enctype="multipart/form-data">
+            <input  type="file" id="file-input" name="file" accept="image/*">
+            <input style="margin-left: 480px; margin-top: 20px;" type="submit" value="Upload and Predict">
+        </form>
+        <h2 id="prediction"></h2>
+
+        <script>
+            $('#upload-form').on('submit', function(event) {
+                event.preventDefault();
+                var form_data = new FormData(this);
+                $.ajax({
+                    url: '/index',
+                    data: form_data,
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        $('#prediction').text('Predicted Number:   ' + response.prediction);
+                    },
+                    error: function(error) {
+                        $('#prediction').text('An error occurred.');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

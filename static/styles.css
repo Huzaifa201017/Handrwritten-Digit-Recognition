@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Style for the main heading */
+h1 {
+    text-align: center;
+    color: #fdfcfc;
+    font-size: 44px;
+    padding-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+
+/* Style for the form and its elements */
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#file-input {
+    display: block;
+    margin-top: 10px;
+    margin-left: 500px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the prediction heading */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #fbfbfc;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
